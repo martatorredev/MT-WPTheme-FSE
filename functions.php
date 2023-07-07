@@ -27,7 +27,7 @@ if ( ! function_exists( 'mt_load_scripts' ) ) {
 	 * @return void
 	 */
 	function mt_load_scripts() {
-		$theme_version = null;
+		$theme_version = wp_get_theme()->get( 'Version' );
 
 		// 1. Styles.
 		wp_enqueue_style( 'style', get_stylesheet_uri(), array(), $theme_version );
