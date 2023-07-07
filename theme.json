@@ -297,7 +297,7 @@
 					"slug": "small"
 				},
 				{
-					"size": "1.125rem",
+					"size": "1.25rem",
 					"slug": "medium"
 				},
 				{
@@ -449,8 +449,13 @@
 				}
 			},
 			"link": {
-				"color": {
-					"text": "var(--wp--preset--color--dark-gray)"
+				":hover": {
+					"typography": {
+						"textDecoration": "underline"
+					}
+				},
+				"typography": {
+					"textDecoration": "none"
 				}
 			}
 		},
