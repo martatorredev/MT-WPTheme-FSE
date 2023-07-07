@@ -106,17 +106,69 @@ header {
 	&.site-header {
 		padding: 0;
 
-		.wp-block-search {
-			max-width: 290px;
+		.wp-block-navigation {
+			.wp-block-navigation__container {
+				// ! hack: Makes the items same width to have a smoother change of font family
+				display: grid;
+				grid-auto-flow: column;
+				grid-auto-columns: 1fr;
+				place-items: center;
+				gap: 0;
 
-			.wp-block-search__button {
-				padding: 0;
-				color: inherit;
+				.wp-block-navigation-item {
+					transition: background-color 0.3s, color 0.3s;
+				}
+
+				> .wp-block-navigation-item {
+					padding-block: $spacing-vertical;
+					
+					.wp-block-navigation__submenu-icon {
+						margin-left: 0.5em;
+						height: 0.7em;
+						width: 0.7em;
+						transition: transform 0.2s;
+					}
+
+					&:hover {
+						font-family: var(--wp--preset--font-family--space-grotesk);
+						color: var(--wp--preset--color--mt-green);
+						text-decoration: underline;
+						letter-spacing: 1.05px;
+
+						> .wp-block-navigation__submenu-icon {
+							transform: rotate(0.5turn);
+						}
+					}
+				}
 			}
-		}
 
-		.wp-block-navigation__container > .wp-block-navigation-item {
-			padding-block: $spacing-vertical;
+			.wp-block-navigation__submenu-container {
+				min-width: 255px !important;
+				gap: 2px;
+				letter-spacing: initial;
+				
+				.wp-block-navigation-item {
+					font-family: var(--wp--preset--font-family--red-hat-display);
+					color: var(--wp--preset--color--white);
+					background-color: #061e3a66;
+
+					&:hover {
+						background-color: var(--wp--preset--color--mt-green);
+						color: var(--wp--preset--color--mt-dark-blue);
+						font-family: var(--wp--preset--font-family--space-grotesk);
+						text-decoration: underline;
+						letter-spacing: 1.05px;
+					}
+				}
+			}
+
+			&:not(.has-background) {
+				.wp-block-navigation__submenu-container {
+					background: none;
+					border: none;
+					color: unset;
+				}
+			}
 		}
 	}
 }
