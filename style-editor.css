@@ -5,3 +5,8 @@
 .is-root-container.wp-site-blocks {
 	padding: 15px 5vw;
 }
+
+.wp-block-navigation:where(:not([class*=has-text-decoration])) a {
+	text-decoration: none;
+}
+
