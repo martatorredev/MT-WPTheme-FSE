@@ -315,6 +315,9 @@
 	"styles": {
 		"blocks": {
 			"core/button": {
+				"border": {
+					"radius": "0%"
+				},
 				"color": {
 					"background": "var:preset|color|mt-green",
 					"text": "var:preset|color|mt-dark-blue"
