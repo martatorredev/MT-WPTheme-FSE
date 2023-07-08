@@ -184,6 +184,10 @@ main {
 	}
 }
 
+.pixel-background img {
+	object-fit: cover;
+	min-height: clamp(28rem, 85vh, 35rem);
+}
 
 /* Footer */
 
