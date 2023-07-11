@@ -307,6 +307,10 @@
 				{
 					"size": "clamp(1.75rem, 3vw, 2.25rem)",
 					"slug": "x-large"
+				},
+				{
+					"size": "clamp(2.75rem, 6vw, 3.25rem)",
+					"slug": "xx-large"
 				}
 			]
 		},
@@ -466,9 +470,15 @@
 			},
 			"link": {
 				":hover": {
+					"color": {
+						"text": "var:preset|color|mt-blue"
+					},
 					"typography": {
 						"textDecoration": "underline"
 					}
+				},
+				"color": {
+					"text": "var:preset|color|mt-green"
 				},
 				"typography": {
 					"textDecoration": "none"
@@ -500,11 +510,6 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
-		},
-		{
-			"area": "query",
-			"name": "query",
-			"title": "Query (The Loop)"
 		}
 	],
 	"version": 2,
