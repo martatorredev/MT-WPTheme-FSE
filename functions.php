@@ -12,6 +12,9 @@ if ( ! function_exists( 'martatorredev_theme_support' ) ) {
 		add_theme_support( 'editor-styles' );
 		// Enqueue Editor Styles.
 		add_editor_style( 'style-editor.css' );
+
+		// Enable media library infinite scrolling.
+		add_filter( 'media_library_infinite_scrolling', '__return_true' );
 	}
 	add_action( 'after_setup_theme', 'martatorredev_theme_support' );
 
