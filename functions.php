@@ -1,6 +1,6 @@
 <?php
-if ( ! function_exists( 'martatorredev_theme_support' ) ) {
-	function martatorredev_theme_support() {
+if ( ! function_exists( 'mtdev_theme_support' ) ) {
+	function mtdev_theme_support() {
 		// Add support for Post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 		// Add support for responsive embedded content.
@@ -16,20 +16,20 @@ if ( ! function_exists( 'martatorredev_theme_support' ) ) {
 		// Enable media library infinite scrolling.
 		add_filter( 'media_library_infinite_scrolling', '__return_true' );
 	}
-	add_action( 'after_setup_theme', 'martatorredev_theme_support' );
+	add_action( 'after_setup_theme', 'mtdev_theme_support' );
 
 	// Disable Block Directory: https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/filters/editor-filters.md#block-directory
 	// remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
 	// remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
 }
 
-if ( ! function_exists( 'martatorredev_load_scripts' ) ) {
+if ( ! function_exists( 'mtdev_load_scripts' ) ) {
 	/**
 	 * Enqueue CSS Stylesheets and Javascript files.
 	 *
 	 * @return void
 	 */
-	function martatorredev_load_scripts() {
+	function mtdev_load_scripts() {
 		$theme_version = wp_get_theme()->get( 'Version' );
 
 		// 1. Styles.
@@ -39,5 +39,5 @@ if ( ! function_exists( 'martatorredev_load_scripts' ) ) {
 		// 2. Scripts.
 		wp_enqueue_script( 'mainjs', get_theme_file_uri( 'assets/dist/main.bundle.js' ), array(), $theme_version, true );
 	}
-	add_action( 'wp_enqueue_scripts', 'martatorredev_load_scripts' );
+	add_action( 'wp_enqueue_scripts', 'mtdev_load_scripts' );
 }
