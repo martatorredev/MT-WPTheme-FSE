@@ -171,11 +171,13 @@
 				},
 				"font-weight": {
 					"light": "300",
-					"normal": "400"
+					"normal": "400",
+					"bolder": "800"
 				},
 				"line-height": {
 					"body": 1.7,
 					"heading": 1.3,
+					"button": 1.3,
 					"page-title": 1.1
 				}
 			}
@@ -262,20 +264,6 @@
 					"slug": "red-hat-display"
 				},
 				{
-					"fontFace": [
-						{
-							"fontFamily": "Space Grotesk",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/space-grotesk_normal_700.ttf"
-							]
-						}
-					],
-					"fontFamily": "Space Grotesk",
-					"slug": "space-grotesk"
-				},
-				{
 					"fontFamily": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif",
 					"name": "Sans Serif",
 					"slug": "sans-serif"
@@ -289,6 +277,28 @@
 					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
 					"name": "Monospace",
 					"slug": "monospace"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Space Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/space-grotesk_normal_700.ttf"
+							]
+						},
+						{
+							"fontFamily": "Space Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/space-grotesk_normal_500.ttf"
+							]
+						}
+					],
+					"fontFamily": "Space Grotesk",
+					"slug": "space-grotesk"
 				}
 			],
 			"fontSizes": [
@@ -328,17 +338,18 @@
 				},
 				"spacing": {
 					"padding": {
-						"bottom": "0.75rem",
-						"left": "1.5rem",
-						"right": "1.5rem",
-						"top": "0.75rem"
+						"bottom": "0.75em",
+						"left": "1.5em",
+						"right": "1.5em",
+						"top": "0.75em"
 					}
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|space-grotesk",
 					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "var(--wp--custom--typography--font-weight--normal)",
-					"textTransform": "uppercase"
+					"fontWeight": "var(--wp--custom--typography--font-weight--bolder)",
+					"textTransform": "uppercase",
+					"lineHeight": "var(--wp--custom--typography--line-height--heading)"
 				},
 				"variations": {
 					"outline": {
@@ -437,7 +448,7 @@
 			"h2": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--space-grotesk)",
-					"fontSize": "var(--wp--custom--typography--font-size--gigantic)",
+					"fontSize": "2.5rem",
 					"fontWeight": "var(--wp--custom--typography--font-weight--normal)",
 					"lineHeight": "var(--wp--custom--typography--line-height--heading)"
 				}
