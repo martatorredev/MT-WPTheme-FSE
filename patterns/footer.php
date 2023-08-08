@@ -12,11 +12,11 @@
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:navigation {"ref":97,"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"},"style":{"typography":{"textTransform":"none","textDecoration":"underline","fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"0.2rem"}},"fontSize":"medium"} /-->
 
 <!-- wp:social-links {"iconColor":"white","iconColorValue":"#ffffff","size":"has-normal-icon-size","align":"center","className":"is-style-logos-only"} -->
-<ul class="wp-block-social-links aligncenter has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"google.com","service":"instagram"} /-->
+<ul class="wp-block-social-links aligncenter has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://www.instagram.com/martatorredev/","service":"instagram","label":"Instagram"} /-->
 
-<!-- wp:social-link {"url":"google.com","service":"github"} /-->
+<!-- wp:social-link {"url":"https://github.com/martatorredev","service":"github"} /-->
 
-<!-- wp:social-link {"url":"google.com","service":"wordpress"} /--></ul>
+<!-- wp:social-link {"url":"https://profiles.wordpress.org/martatorre/","service":"wordpress"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:column -->
 
@@ -24,11 +24,11 @@
 <div class="wp-block-column is-vertically-aligned-top" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:navigation {"ref":100,"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"},"style":{"spacing":{"blockGap":"0.2rem"},"typography":{"textTransform":"none","textDecoration":"underline","fontStyle":"normal","fontWeight":"400"}},"fontSize":"medium"} /-->
 
 <!-- wp:social-links {"iconColor":"white","iconColorValue":"#ffffff","size":"has-normal-icon-size","align":"center","className":"is-style-logos-only"} -->
-<ul class="wp-block-social-links aligncenter has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
+<ul class="wp-block-social-links aligncenter has-normal-icon-size has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://twitter.com/martatorredev","service":"twitter"} /-->
 
-<!-- wp:social-link {"url":"#","service":"mastodon"} /-->
+<!-- wp:social-link {"url":"https://wptoots.social/@martatorredev","service":"mastodon"} /-->
 
-<!-- wp:social-link {"url":"#","service":"linkedin"} /--></ul>
+<!-- wp:social-link {"url":"https://www.linkedin.com/in/martatorredev/","service":"linkedin"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -38,7 +38,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|40","right":"0","bottom":"var:preset|spacing|30","left":"0"}}},"fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--40);margin-right:0;margin-bottom:var(--wp--preset--spacing--30);margin-left:0">[Aquí el texto referente a los contenidos o sus licencias]</p>
+<p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--40);margin-right:0;margin-bottom:var(--wp--preset--spacing--30);margin-left:0">Este proyecto y sus contenidos son de Marta Torre y trabaja bajo la licencia <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="noreferrer noopener">CC BY 4.0</a> | <a href="#" target="_blank" rel="noreferrer noopener">Agradecimientos</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"small","fontFamily":"space-grotesk"} -->
@@ -47,7 +47,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40","padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|50"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:image {"id":11394,"linkDestination":"custom"} -->
-<figure class="wp-block-image"><a href="https://www.creadorasdebosques.com/compensa" target="_blank" rel="noreferrer noopener"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sello-compensa.webp" alt="<?php echo esc_attr_e( 'Sello de creadorasdebosques.com esta web compensa su emisión de CO2 por consumo energético', 'Martatorre' ); ?>" class="wp-image-11394"/></a></figure>
+<figure class="wp-block-image"><a href="https://www.creadorasdebosques.com/compensa" target="_blank" rel="noreferrer noopener"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sello-compensa.webp" alt="<?php echo esc_attr_e( 'Sello de creadorasdebosques.com esta web compensa su emisión de CO2 por consumo energético', 'MT Theme FSE' ); ?>" class="wp-image-11394"/></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:html -->
