@@ -465,13 +465,56 @@ ul.wp-block-post-template {
 	}
 }
 
-/* List */
-ul.gap-1 {
-	gap: 1rem;
-	display: flex;
-	flex-direction: column;
+/* Steps */
+.wp-block-columns.steps {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+	max-width: 35em;
+	gap: 1rem 2rem;
+
+	.wp-block-column {
+		&:nth-of-type(1) {
+			grid-column: 5 / span 6;
+			grid-row: 1 / 2;
+		}
+
+		&:nth-of-type(2) {
+			grid-column: 9 / span 6;
+			grid-row: 3 / 4;
+		}
+
+		&:nth-of-type(3) {
+			grid-column: 1 / span 6;
+			grid-row: 3 / 4;
+		}
+		&:nth-of-type(4) {
+			grid-column: 5 / span 6;
+			grid-row: 5 / 6;
+		}
+	}
+
+	& > .arrow {
+		grid-column: 7 / 9;
+		align-self: center;
+		justify-self: center;
+
+		&:nth-of-type(2n - 1) {
+			transform: rotate(-55deg);
+		}
+
+		&.arrow:nth-of-type(2n) {
+			transform: rotate(55deg);
+		}
+	}
 }
 
+
+/* Image */
+.wp-block-image.purple {
+	filter: hue-rotate(96deg) saturate(25);
+}
+
+/* List */
 ul.has-check-bullets {
 	list-style: none;
 	padding: 0;
@@ -485,6 +528,43 @@ ul.has-check-bullets {
 			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0002 20.8781C16.8603 20.8781 20.8002 16.9382 20.8002 12.0781C20.8002 7.21795 16.8603 3.27806 12.0002 3.27806C7.14009 3.27806 3.2002 7.21795 3.2002 12.0781C3.2002 16.9382 7.14009 20.8781 12.0002 20.8781ZM11.7316 15.6024L16.6205 9.73571L15.2021 8.55371L10.9604 13.6438L8.74184 11.4253L7.43628 12.7308L10.3696 15.6642L11.0844 16.379L11.7316 15.6024Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
 		}
 	}
+}
+
+ol.has-big-numbers {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	counter-reset: list;
+
+	li {
+		display: flex;
+		counter-increment: list;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	li::before {
+		content: counter(list) " ";
+		font-size: 2.5rem;
+		color: var(--wp--preset--color--mt-blue);
+	}
+}
+
+ul.gap-1,
+ol.gap-1 {
+	gap: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+ul.gap-4,
+ol.gap-4 {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
 }
 
 /* Utils */
@@ -530,6 +610,10 @@ ul.has-check-bullets {
 	width: fit-content !important;
 }
 
+.mw-45 {
+	max-width: 45rem !important;
+}
+
 .mw-56 {
 	max-width: 56rem !important;
 }
@@ -548,4 +632,8 @@ ul.has-check-bullets {
 
 .mw-67 {
 	max-width: 67rem !important;
+}
+
+.minw-7 {
+	min-width: 7rem !important;
 }
