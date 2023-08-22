@@ -34,7 +34,7 @@
 <!-- /wp:columns -->
 
 <!-- wp:image {"align":"center","id":121,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
-<figure class="wp-block-image aligncenter size-large is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Logo-Marta-Torre-grande.svg" alt="" class="wp-image-121"/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/logo-marta-torre.svg" alt="Logo de MartaTorre"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|40","right":"0","bottom":"var:preset|spacing|30","left":"0"}}},"fontSize":"small"} -->
