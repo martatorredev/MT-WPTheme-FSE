@@ -236,6 +236,28 @@
 				{
 					"fontFace": [
 						{
+							"fontFamily": "Space Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/space-grotesk_normal_700.ttf"
+							]
+						},
+						{
+							"fontFamily": "Space Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/space-grotesk_normal_500.ttf"
+							]
+						}
+					],
+					"fontFamily": "Space Grotesk",
+					"slug": "space-grotesk"
+				},
+				{
+					"fontFace": [
+						{
 							"fontFamily": "Red Hat Display",
 							"fontStyle": "normal",
 							"fontWeight": "400",
@@ -277,28 +299,6 @@
 					"fontFamily": "SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
 					"name": "Monospace",
 					"slug": "monospace"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "Space Grotesk",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/space-grotesk_normal_700.ttf"
-							]
-						},
-						{
-							"fontFamily": "Space Grotesk",
-							"fontStyle": "normal",
-							"fontWeight": "500",
-							"src": [
-								"file:./assets/fonts/space-grotesk_normal_500.ttf"
-							]
-						}
-					],
-					"fontFamily": "Space Grotesk",
-					"slug": "space-grotesk"
 				}
 			],
 			"fontSizes": [
