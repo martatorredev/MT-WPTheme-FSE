@@ -35,6 +35,34 @@
   grid-column: span 3;
 }
 
+/* Single post navigation */
+.wp-block-post-navigation-link a {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  background-color: var(--wp--preset--color--light-gray-200);
+  color: var(--wp--preset--color--mt-dark-blue);
+  text-transform: uppercase;
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  padding: 0.75rem 1.5rem;
+  padding-right: 0.75rem;
+}
+
+.wp-block-post-navigation-link a::after {
+  content: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.28 12.9874C16.4207 12.8469 16.4998 12.6563 16.5 12.4574V12.0774C16.4977 11.879 16.4189 11.6892 16.28 11.5474L11.14 6.41743C11.0461 6.32277 10.9183 6.26953 10.785 6.26953C10.6517 6.26953 10.5239 6.32277 10.43 6.41743L9.72 7.12743C9.62594 7.21959 9.57293 7.34574 9.57293 7.47743C9.57293 7.60912 9.62594 7.73527 9.72 7.82743L14.17 12.2674L9.72 16.7074C9.62534 16.8013 9.5721 16.9291 9.5721 17.0624C9.5721 17.1957 9.62534 17.3235 9.72 17.4174L10.43 18.1174C10.5239 18.2121 10.6517 18.2653 10.785 18.2653C10.9183 18.2653 11.0461 18.2121 11.14 18.1174L16.28 12.9874Z' fill='%23011046'/%3E%3C/svg%3E%0A");
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.wp-block-post-navigation-link.post-navigation-link-previous a {
+  padding-left: 0.75rem;
+}
+
+.wp-block-post-navigation-link.post-navigation-link-previous a::after {
+  transform: rotate(180deg);
+  order: -1
+}
+
 /* Inputs */
 input[type=text],
 input[type=password],
@@ -132,6 +160,11 @@ label {
 /* Image */
 .wp-block-image.purple {
   filter: hue-rotate(96deg) saturate(25);
+}
+
+/* Post image */
+.post-content:has(.wp-block-post-featured-image.mt-n20) {
+  padding-top: 22rem;
 }
 
 /* List */
