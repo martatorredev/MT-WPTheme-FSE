@@ -47,4 +47,37 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+
+  const formDescriptions = document.querySelectorAll('.gfield_consent_description')
+
+  if (formDescriptions) {
+    formDescriptions.forEach(description => {
+      const form = description.closest('form')
+      const inputs = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"])')
+      const checkbox = form.querySelector('input[type="checkbox"]')
+      let checked = false
+
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          if (checked) return
+
+          description.style.maxHeight = `${description.scrollHeight}px`
+          description.classList.add('is-open')
+        })
+
+        input.addEventListener('blur', () => {
+          description.style.maxHeight = '0px'
+          description.classList.remove('is-open')
+        })
+      })
+
+      checkbox.addEventListener('change', (event) => {
+        checked = event.target.checked
+
+        const maxHeight = checked ? '0px' : `${description.scrollHeight}px`
+        description.classList[checked ? 'remove' : 'add']('is-open')
+        description.style.maxHeight = maxHeight
+      })
+    })
+  }
 })

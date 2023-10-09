@@ -79,7 +79,6 @@ select {
 }
 		
 label {
-	color: var(--wp--preset--color--light-gray-100);
 	font-family: var(--wp--preset--font-family--red-hat-display);
 	font-size: 0.875rem;
 	font-style: normal;
@@ -159,6 +158,8 @@ header {
 						height: 0.7em;
 						width: 0.7em;
 						transition: transform 0.2s;
+						position: absolute;
+						right: -1.25em;
 					}
 
 					&:hover {
@@ -498,7 +499,65 @@ main {
       color: white;
     }
   }
+
+	.gform_wrapper.gravity-theme {
+    line-height: 1;
+		
+		.gfield.gfield--width-half {
+			grid-column: span 12;
+		}
+
+		.gfield_required {
+			display: none;
+		}
+
+		.ginput_container.ginput_container_consent label {
+			font-size: 0.75rem;
+			font-weight: 400;
+			line-height: 1.3;
+			text-transform: none;
+		}
+
+		input {
+			line-height: 1.5 !important;
+		}
+
+		.field_description_below .gfield_consent_description,
+		.gfield_consent_description {
+			border: none;
+			font-size: 0.8rem;
+			margin-top: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			padding: 0;
+			width: 100%;
+			line-height: 1.4;
+			transition: max-height 0.5s;
+		}
+
+		input[type='submit'] {
+			background-color: var(--wp--preset--color--mt-green);
+			color: var(--wp--preset--color--mt-dark-blue);
+			font-family: var(--wp--preset--font-family--space-grotesk);
+			font-size: var(--wp--preset--font-size--medium);
+			font-weight: var(--wp--custom--typography--font-weight--bolder);
+			text-transform: uppercase;
+			border: none;
+			cursor: pointer;
+			padding: 0.75rem 1rem;
+		}
+	}
 }
+
+.wp-block-embed {
+	margin: 1.5rem 0;
+}
+
+.update-date:not(:has(.wp-block-post-date__modified-date)), 
+.update-date:not(:has(.wp-block-post-date__modified-date)) ~ p {
+	display: none;
+}
+
 
 /* Pagination */
 .wp-block-query-pagination-numbers,
