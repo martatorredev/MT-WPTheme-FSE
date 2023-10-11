@@ -759,6 +759,9 @@ ol.gap-4 {
 	gap: 4rem;
 }
 
+/* Responsive */
+@import './responsive.scss';
+
 /* Utils */
 .mx-auto {
 	margin-left: auto !important;
@@ -841,4 +844,8 @@ ol.gap-4 {
   clip-path: inset(50%);
   word-wrap: normal !important;
   border: 0;
+}
+
+.circle {
+	clip-path: circle(50% at 50% 50%)
 }
