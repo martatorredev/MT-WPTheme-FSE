@@ -492,7 +492,7 @@
 					"text": "var(--wp--preset--color--mt-green)"
 				},
 				"typography": {
-					"textDecoration": "none"
+					"textDecoration": "underline"
 				}
 			}
 		},

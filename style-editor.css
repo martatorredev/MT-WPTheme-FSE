@@ -281,3 +281,14 @@ ol.gap-4 {
 .minw-7 {
 	min-width: 7rem !important;
 }
+
+.circle {
+	clip-path: circle(50% at 50% 50%);
+	filter: grayscale(1);
+	opacity: 0.6;
+}
+
+.circle.brigth {
+  filter: brightness(1.2) grayscale(1);
+  opacity: 1;
+}

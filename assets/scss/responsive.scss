@@ -1,0 +1,439 @@
+/* 
+  Responsive styles
+  -----------------
+  This file contains styles that are only applied on certain screen sizes.
+  It is imported in the main style.scss file.
+ */
+
+
+/* 
+  Mobile menu
+  -----------
+  The mobile menu is a custom block that is added to the header.
+  It is hidden by default and only shown when the user clicks on the menu button.
+ */
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .wp-block-navigation__responsive-container-open:not(.always-shown) {
+    display: flex !important;
+  }
+
+  .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+    background-color: inherit;
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: auto;
+  }
+
+  .wp-block-navigation__responsive-container {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header.site-header .wp-block-group > .wp-block-navigation::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='156' height='150' fill='none'%3E%3Cpath fill='%23fff' d='M17.3 34.9c9.444 0 17.1-7.656 17.1-17.1C34.4 8.356 26.744.7 17.3.7 7.856.7.2 8.356.2 17.8c0 9.444 7.656 17.1 17.1 17.1ZM138.7 34.9c9.444 0 17.1-7.656 17.1-17.1 0-9.444-7.656-17.1-17.1-17.1-9.444 0-17.1 7.656-17.1 17.1 0 9.444 7.656 17.1 17.1 17.1ZM40.2 91.5l-5.9-5.9.1-35.2 23.4 23.5-17.6 17.6ZM116.4 91.5l5.7-5.8.1-35.3-23.5 23.5 17.7 17.6ZM78.142 94.256l-17.607 17.606 17.607 17.607 17.607-17.607-17.607-17.606ZM97.363 75.468 79.757 93.075l17.606 17.607 17.607-17.607-17.607-17.607ZM58.954 75.42 41.347 93.027l17.607 17.607 17.607-17.607L58.954 75.42ZM153.6 50.4h-29.8v98.9h29.8V50.4ZM32.6 50.4H2.8v98.9h29.8V50.4Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 2rem;
+  }
+}
+
+.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open {
+  padding: 1rem 0.5rem;
+  margin: -1rem 2rem -1rem auto;
+  transition: 0.3s color, 0.3s background-color;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    content: "Menú";
+    padding-right: 0.75rem;
+  }
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+  background: transparent;
+  position: absolute;
+  height: max-content;
+  padding: 0;
+}
+
+button.wp-block-navigation__responsive-container-close {
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  width: 6.5rem;
+  height: 3.5rem;
+  opacity: 0;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open {
+  .wp-block-navigation__responsive-dialog {
+    margin: 0 !important;
+  }
+
+  .wp-block-navigation__responsive-close {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .wp-block-navigation__container .wp-block-navigation-item.wp-block-navigation-link a:hover,
+  .wp-block-navigation-item.has-child.wp-block-navigation-submenu .wp-block-navigation-item__content:hover {
+    background-color: var(--wp--preset--color--mt-green) !important;
+    color: var(--wp--preset--color--mt-dark-blue) !important;
+    font-family: var(--wp--preset--font-family--space-grotesk);
+    text-decoration: underline;
+    letter-spacing: 1.05px;
+  }
+
+  .wp-block-navigation__container .wp-block-navigation-item.wp-block-navigation-link a,
+  .wp-block-navigation-item.has-child.wp-block-navigation-submenu .wp-block-navigation-item__content {
+    font-family: var(--wp--preset--font-family--red-hat-display);
+    color: var(--wp--preset--color--white) !important;
+    background-color: var(--wp--preset--color--mt-dark-blue) !important;
+    border: 1px solid var(--wp--preset--color--mt-green);
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 1rem !important;
+    transition: 0.3s color, 0.3s background-color;
+  }
+
+  .wp-block-navigation__container .wp-block-navigation-item.wp-block-navigation-link {
+    width: 100%;
+  }
+
+  .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .wp-block-navigation__responsive-container-content .wp-block-navigation__container .wp-block-navigation-item__content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wp-block-navigation__responsive-close .wp-block-navigation__container > .wp-block-navigation-item {
+    padding: 0 !important;
+  }
+
+  .wp-block-navigation__submenu-container {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .wp-block-navigation-item.has-child.wp-block-navigation-submenu {
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .wp-block-navigation-item:has(.wp-block-site-logo) {
+    display: none;
+  }
+
+  .wp-block-navigation__container > .wp-block-navigation-item:hover {
+    text-decoration: unset !important;
+    letter-spacing: unset !important;
+  }
+}
+
+.has-modal-open .wp-block-navigation__responsive-container-open {
+  background-color: var(--wp--preset--color--mt-green);
+  color: var(--wp--preset--color--mt-dark-blue);
+}
+
+
+/* 
+  Circular photo section
+  ---------------------
+  The circular photo section is a custom block that is added to some pages like home or about-me.
+ */
+@media screen and (min-width: 600px) and (max-width: 1200px){
+  .circular-photo-section.wp-block-columns {
+    display: grid;
+    gap: 1rem 4rem;
+
+    .wp-block-column:nth-child(2) {
+      grid-row: 1;
+      grid-column: span 2; 
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .circular-photo-section.wp-block-columns {
+    display: grid;
+    grid-template-areas: 
+      "photo"
+      "text";
+  
+    .wp-block-column {
+      &:nth-child(2) {
+        grid-area: photo;
+      }
+  
+      &:not(:nth-child(2)) {
+        display: flex;
+        flex-direction: column;
+        gap: 18rem;
+        max-width: 24rem;
+        margin-right: auto;
+      }
+      
+      &:not(:nth-child(2)) > * + * {
+        margin-block-start: 0;
+      }
+      
+      &:nth-child(1),
+      &:nth-child(3) {
+        grid-area: text;
+        align-self: unset;
+      }
+      
+      &:nth-child(1) {
+        margin-top: 12rem;
+        margin-right: 0;
+        margin-bottom: 4rem;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+/* 
+  Post navigation
+  ---------------
+  The post navigation is part of a WP template that is added to the bottom of posts.
+ */
+@media screen and (max-width: 768px) {
+  .posts-navigation li:not(:has(.prev, .next, .current)) {
+    display: none;
+  }
+}
+
+
+
+
+.wp-block-social-link-anchor {
+  position: relative;
+
+  &::before {
+    content: '';
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--background, transparent);
+    position: absolute;
+    background-size: contain;
+  }
+
+  &[href*="instagram.com"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5736 18.0781C17.2161 18.0781 18.5476 16.7466 18.5476 15.1041C18.5476 13.4616 17.2161 12.1301 15.5736 12.1301C13.9311 12.1301 12.5996 13.4616 12.5996 15.1041C12.5996 16.7466 13.9311 18.0781 15.5736 18.0781Z' stroke='%23FBFBFC' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.7715 6.70697H11.3744C9.05555 6.70697 7.17578 8.58674 7.17578 10.9055V19.3027C7.17578 21.6215 9.05555 23.5013 11.3744 23.5013H19.7715C22.0903 23.5013 23.9701 21.6215 23.9701 19.3027V10.9055C23.9701 8.58674 22.0903 6.70697 19.7715 6.70697Z' stroke='%23FBFBFC' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.1222 11.9552C20.8951 11.9552 21.5217 11.3286 21.5217 10.5557C21.5217 9.78272 20.8951 9.15613 20.1222 9.15613C19.3492 9.15613 18.7227 9.78272 18.7227 10.5557C18.7227 11.3286 19.3492 11.9552 20.1222 11.9552Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+  
+  &[href*="github.com"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.4447 22.8269C24.4447 23.0246 24.3661 23.2142 24.2263 23.354C24.0865 23.4938 23.8969 23.5723 23.6992 23.5723C22.9092 23.5699 22.1522 23.2549 21.5936 22.6963C21.035 22.1377 20.72 21.3807 20.7176 20.5907V19.8452C20.7176 19.4499 20.5605 19.0707 20.2809 18.7911C20.0013 18.5115 19.6221 18.3544 19.2268 18.3544H18.1086V22.0815C18.1086 22.4769 18.2657 22.8561 18.5453 23.1357C18.8249 23.4153 19.2041 23.5723 19.5995 23.5723C19.7972 23.5723 19.9868 23.6509 20.1265 23.7907C20.2663 23.9304 20.3449 24.12 20.3449 24.3177C20.3449 24.5154 20.2663 24.705 20.1265 24.8448C19.9868 24.9846 19.7972 25.0632 19.5995 25.0632C18.8094 25.0607 18.0525 24.7458 17.4938 24.1871C16.9352 23.6285 16.6203 22.8715 16.6178 22.0815V18.3544H14.3816V22.0815C14.3791 22.8715 14.0642 23.6285 13.5055 24.1871C12.9469 24.7458 12.1899 25.0607 11.3999 25.0632C11.2022 25.0632 11.0126 24.9846 10.8728 24.8448C10.733 24.705 10.6545 24.5154 10.6545 24.3177C10.6545 24.12 10.733 23.9304 10.8728 23.7907C11.0126 23.6509 11.2022 23.5723 11.3999 23.5723C11.7953 23.5723 12.1745 23.4153 12.4541 23.1357C12.7337 22.8561 12.8907 22.4769 12.8907 22.0815V18.3544H11.7726C11.3772 18.3544 10.998 18.5115 10.7184 18.7911C10.4388 19.0707 10.2818 19.4499 10.2818 19.8452V20.5907C10.2793 21.3807 9.96438 22.1377 9.40574 22.6963C8.8471 23.2549 8.09013 23.5699 7.3001 23.5723C7.10241 23.5723 6.91281 23.4938 6.77301 23.354C6.63322 23.2142 6.55469 23.0246 6.55469 22.8269C6.55469 22.6292 6.63322 22.4396 6.77301 22.2998C6.91281 22.16 7.10241 22.0815 7.3001 22.0815C7.6955 22.0815 8.07469 21.9244 8.35428 21.6448C8.63387 21.3653 8.79093 20.9861 8.79093 20.5907V19.8452C8.79155 19.3439 8.91815 18.8508 9.15912 18.4112C9.40008 17.9716 9.74768 17.5996 10.17 17.3295C9.51144 16.8465 8.97594 16.2152 8.60685 15.4868C8.23777 14.7583 8.04546 13.9531 8.04552 13.1365V12.3911C8.05482 11.4652 8.30187 10.5572 8.76298 9.75418C8.53582 9.0187 8.46326 8.24418 8.54985 7.47931C8.63644 6.71443 8.88031 5.97573 9.26614 5.30964C9.32985 5.19542 9.4232 5.1005 9.53636 5.0349C9.64951 4.96931 9.77827 4.93546 9.90906 4.93694C10.7774 4.93475 11.6341 5.13587 12.4107 5.52418C13.1874 5.9125 13.8623 6.47723 14.3816 7.17318H16.6178C17.137 6.47723 17.812 5.9125 18.5886 5.52418C19.3652 5.13587 20.222 4.93475 21.0903 4.93694C21.2211 4.93546 21.3498 4.96931 21.463 5.0349C21.5761 5.1005 21.6695 5.19542 21.7332 5.30964C22.119 5.97573 22.3629 6.71443 22.4495 7.47931C22.5361 8.24418 22.4635 9.0187 22.2364 9.75418C22.6975 10.5572 22.9445 11.4652 22.9538 12.3911V13.1365C22.9539 13.9531 22.7616 14.7583 22.3925 15.4868C22.0234 16.2152 21.4879 16.8465 20.8294 17.3295C21.2517 17.5996 21.5993 17.9716 21.8402 18.4112C22.0812 18.8508 22.2078 19.3439 22.2084 19.8452V20.5907C22.2084 20.9861 22.3655 21.3653 22.6451 21.6448C22.9247 21.9244 23.3039 22.0815 23.6992 22.0815C23.8969 22.0815 24.0865 22.16 24.2263 22.2998C24.3661 22.4396 24.4447 22.6292 24.4447 22.8269Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+  
+  &[href*="wordpress.org"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.88185 11.1589L11.3839 23.4895C8.23468 21.9637 6.06573 18.7347 6.06573 15C6.06573 13.6294 6.35847 12.3343 6.88185 11.1589ZM21.8694 14.5254C21.8694 13.3589 21.4524 12.5516 21.0931 11.9218C20.6141 11.1456 20.1661 10.4847 20.1661 9.70847C20.1661 8.83911 20.8226 8.03185 21.7496 8.03185C21.7895 8.03185 21.8294 8.03629 21.8738 8.04073C20.1927 6.50161 17.9573 5.56129 15.5 5.56129C12.2044 5.56129 9.30363 7.25121 7.61371 9.81492C7.83548 9.82379 8.04395 9.82823 8.22137 9.82823C9.20605 9.82823 10.7363 9.70847 10.7363 9.70847C11.2464 9.67742 11.304 10.427 10.7984 10.4847C10.7984 10.4847 10.2883 10.5423 9.72056 10.5734L13.1581 20.7927L15.225 14.6008L13.7569 10.5734C13.2468 10.5423 12.7677 10.4847 12.7677 10.4847C12.2577 10.4536 12.3198 9.67742 12.8254 9.70847C12.8254 9.70847 14.3823 9.82823 15.3093 9.82823C16.294 9.82823 17.8242 9.70847 17.8242 9.70847C18.3343 9.67742 18.3919 10.427 17.8863 10.4847C17.8863 10.4847 17.3762 10.5423 16.8085 10.5734L20.2194 20.7173L21.1597 17.5726C21.5589 16.2685 21.8694 15.3327 21.8694 14.5254ZM15.6641 15.825L12.8343 24.0528C13.6815 24.3012 14.573 24.4387 15.5 24.4387C16.6 24.4387 17.6512 24.248 18.6315 23.902C18.6048 23.8621 18.5827 23.8177 18.5649 23.7734L15.6641 15.825ZM23.781 10.4714C23.821 10.773 23.8431 11.0923 23.8431 11.4427C23.8431 12.4008 23.6657 13.4742 23.1246 14.8226L20.2415 23.1569C23.0492 21.5202 24.9343 18.4819 24.9343 15C24.9343 13.3589 24.5173 11.8153 23.781 10.4714ZM26.5 15C26.5 21.0677 21.5633 26 15.5 26C9.43226 26 4.5 21.0633 4.5 15C4.5 8.93226 9.43226 4 15.5 4C21.5633 4 26.5 8.93226 26.5 15ZM25.9944 15C25.9944 9.21169 21.2839 4.50565 15.5 4.50565C9.71169 4.50565 5.00565 9.21169 5.00565 15C5.00565 20.7883 9.71613 25.4944 15.5 25.4944C21.2883 25.4944 25.9944 20.7883 25.9944 15Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+  
+  &[href*="wptoots.social"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.6506 11.631C24.6506 7.37493 21.862 6.12739 21.862 6.12739C20.4559 5.48155 18.0409 5.21014 15.5336 5.1897H15.4714C12.9633 5.21014 10.55 5.48155 9.14381 6.12739C9.14381 6.12739 6.35525 7.37493 6.35525 11.631C6.35525 12.6054 6.33645 13.7712 6.36751 15.0065C6.46888 19.1693 7.13108 23.2708 10.9792 24.2895C12.7532 24.7587 14.277 24.8576 15.5041 24.7898C17.7294 24.6672 18.9786 23.9951 18.9786 23.9951L18.905 22.3805C18.905 22.3805 17.3149 22.8817 15.5295 22.8212C13.7595 22.7607 11.8923 22.6307 11.6062 20.4577C11.5793 20.2558 11.5662 20.0524 11.5669 19.8487C11.5669 19.8487 13.3042 20.2738 15.505 20.3743C16.8506 20.4357 18.1128 20.295 19.3947 20.143C21.853 19.8495 23.9933 18.3346 24.2622 16.9506C24.6849 14.7719 24.6506 11.631 24.6506 11.631ZM21.3609 17.1157H19.3195V12.1133C19.3195 11.0587 18.8756 10.524 17.9886 10.524C17.0076 10.524 16.5154 11.1584 16.5154 12.4141V15.152H14.4855V12.4133C14.4855 11.1576 13.9934 10.5232 13.0123 10.5232C12.1253 10.5232 11.6814 11.0587 11.6814 12.1125V17.1149H9.64005V11.962C9.64005 10.9083 9.9082 10.0711 10.4469 9.45226C11.0029 8.83257 11.7296 8.51538 12.633 8.51538C13.6778 8.51538 14.4692 8.91678 14.9924 9.7204L15.5 10.5731L16.0085 9.7204C16.5318 8.91678 17.3231 8.51538 18.3679 8.51538C19.2705 8.51538 19.9981 8.83257 20.554 9.45226C21.0919 10.0711 21.36 10.9083 21.36 11.962V17.1157H21.3609Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+  
+  &[href*="linkedin.com"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.8516 6.73926H8.02699C7.61081 6.73926 7.27344 7.07664 7.27344 7.49281V23.3174C7.27344 23.7336 7.61081 24.071 8.02699 24.071H23.8516C24.2678 24.071 24.6052 23.7336 24.6052 23.3174V7.49281C24.6052 7.07664 24.2678 6.73926 23.8516 6.73926Z' stroke='%23FBFBFC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5625 14.6516V19.9264' stroke='%23FBFBFC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.7949 14.6516V19.9264' stroke='%23FBFBFC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5625 17.289C15.5625 16.5895 15.8404 15.9187 16.335 15.424C16.8296 14.9294 17.5004 14.6516 18.1999 14.6516C18.8994 14.6516 19.5703 14.9294 20.0649 15.424C20.5595 15.9187 20.8374 16.5895 20.8374 17.289V19.9264' stroke='%23FBFBFC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.7938 12.0546C12.4404 12.0546 12.9645 11.5304 12.9645 10.8838C12.9645 10.2372 12.4404 9.71307 11.7938 9.71307C11.1472 9.71307 10.623 10.2372 10.623 10.8838C10.623 11.5304 11.1472 12.0546 11.7938 12.0546Z' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+  
+  &[href*="twitter.com"]::before, 
+  &[href*="x.com"]::before {
+    --size: 2.4rem;
+    --background: #011046;
+    background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0023 13.6226L23.7043 6H22.1167L16.2949 12.6173L11.6485 6H6.28809L13.3159 16.0075L6.28809 24H7.87569L14.0197 17.0104L18.9277 24H24.2881M8.44869 7.17142H10.8877L22.1155 22.8861H19.6759' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
+  }
+}
+
+// .stepss {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center !important;
+// }
+
+// .wp-block-columns.stepsss {
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 35rem;
+//   gap: 0;
+//   padding-top: 6rem;
+// }
+
+// .wp-block-columns.stepsss .wp-block-column {
+//     max-width: 14.5rem;
+//     margin-bottom: -1rem;
+//     margin-top: -5rem;
+// }
+
+// .wp-block-columns.stepsss .wp-block-column:nth-of-type(2n) {
+//     margin-left: auto
+// }
+
+// .wp-block-columns.stepsss > .arrow {
+//   align-self: center;
+//   justify-self: center;
+// }
+// .wp-block-columns.stepsss > .arrow:nth-of-type(2n - 1) {
+//   transform: rotate(-55deg);
+// }
+// .wp-block-columns.stepsss > .arrow.arrow:nth-of-type(2n) {
+//   transform: rotate(55deg);
+// }
+
+
+/* 
+  Footer
+  ---------------
+  The footer is a block located at the bottom of the page.
+ */
+@media screen and (max-width: 992px) {
+  .site-footer {
+    .wp-block-group.is-nowrap,
+    .wp-block-navigation__container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .wp-block-social-links {
+      margin-bottom: 2rem !important;
+    }
+  }
+}
+
+@media screen and (min-width: 782px) and (max-width: 992px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile):not(.is-not-stacked-on-tablet) > .wp-block-column {
+    flex-basis: 100% !important;
+    flex-grow: 1 !important;
+  }
+  
+  .wp-block-columns {
+    flex-wrap: wrap !important;
+  }
+
+  .wp-block-columns.is-not-stacked-on-tablet {
+    flex-wrap: nowrap!important
+  }
+}
+
+/* 
+  Steps
+  -----
+  The steps section.
+*/
+.wp-block-columns.steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .wp-block-columns.steps {
+    display: flex;
+    flex-direction: column;
+    max-width: 35rem;
+    gap: 0;
+    padding-top: 6rem;
+    align-items: unset !important;
+
+  
+    .wp-block-column {
+      max-width: 14.5rem;
+      margin-bottom: -1rem;
+      margin-top: -5rem;
+    }
+  
+    .wp-block-column:nth-of-type(2n) {
+      margin-left: auto
+    }
+  
+    > .arrow {
+      align-self: center;
+      justify-self: center;
+    }
+    > .arrow:nth-of-type(2n - 1) {
+      transform: rotate(-55deg);
+    }
+    > .arrow.arrow:nth-of-type(2n) {
+      transform: rotate(55deg);
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wp-block-columns.steps {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    max-width: 35em;
+    gap: 1rem 2rem;
+  
+    .wp-block-column {
+      &:nth-of-type(1) {
+        grid-column: 5 / span 6;
+        grid-row: 1 / 2;
+      }
+  
+      &:nth-of-type(2) {
+        grid-column: 9 / span 6;
+        grid-row: 3 / 4;
+      }
+  
+      &:nth-of-type(3) {
+        grid-column: 1 / span 6;
+        grid-row: 3 / 4;
+      }
+      &:nth-of-type(4) {
+        grid-column: 5 / span 6;
+        grid-row: 5 / 6;
+      }
+    }
+  
+    & > .arrow {
+      grid-column: 7 / 9;
+      align-self: center;
+      justify-self: center;
+  
+      &:nth-of-type(2n - 1) {
+        transform: rotate(-55deg);
+      }
+  
+      &.arrow:nth-of-type(2n) {
+        transform: rotate(55deg);
+      }
+    }
+  }
+}
+

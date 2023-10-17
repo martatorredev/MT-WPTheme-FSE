@@ -1,0 +1,18 @@
+@mixin animated-link($color, $hover-color, $size: 1.3em) {
+	color: $color;
+	text-decoration: underline;
+	background-image: linear-gradient(to bottom, $color 0%, $color 100%);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 0% $size;
+	transition: background-size 0.4s 0.2s, color 0.4s 0.2s;
+	
+	&:hover,
+	&:focus {
+		background-size: 100% $size;
+		transition-delay: 0s;
+		color: $hover-color;
+	} 
+
+  @content;
+}
