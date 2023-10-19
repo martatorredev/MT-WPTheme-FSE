@@ -250,6 +250,26 @@ main {
   }
 }
 
+.single {
+	.hero-banner {
+		margin-bottom: 0 !important;
+	}
+
+	.post-content > :first-child.wp-block-post-featured-image {
+		@media screen and (min-width: 769px) {
+			margin-top: -20rem
+		}
+	
+		@media screen and (max-width: 768px) {
+			margin-top: -10rem
+		}
+	
+		@media screen and (max-width: 500px) {
+			margin-top: -8rem
+		}
+	}
+}
+
 .page.page-template-default {
 	a:not([class]):not(.wp-block-image a) {
 		@include animated-link(var(--wp--preset--color--mt-green), var(--wp--preset--color--mt-dark-blue));
@@ -599,6 +619,7 @@ main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		text-decoration: none;
 	}
 }
 

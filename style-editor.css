@@ -163,11 +163,6 @@ label {
   filter: hue-rotate(96deg) saturate(25);
 }
 
-/* Post image */
-.post-content:has(.wp-block-post-featured-image.mt-n20) {
-  padding-top: 22rem;
-}
-
 /* List */
 ul.has-check-bullets {
   list-style: none;
@@ -254,10 +249,6 @@ ol.gap-4 {
 	margin-top: -8rem !important
 }
 
-.mt-n20 {
-	margin-top: -20rem !important
-}
-
 .w-fit-content {
 	width: fit-content !important;
 }
@@ -283,9 +274,9 @@ ol.gap-4 {
 }
 
 .circle {
-	clip-path: circle(50% at 50% 50%);
-	filter: grayscale(1);
-	opacity: 0.6;
+  clip-path: circle(50% at 50% 50%);
+  filter: grayscale(1);
+  opacity: 0.6;
 }
 
 .circle.brigth {

@@ -80,4 +80,12 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+
+  const logo = document.querySelector('.wp-block-site-logo a')
+  const navigation = document.querySelector('.wp-block-navigation')
+
+  if (logo && navigation) {
+    const newLogo = logo.cloneNode()
+    navigation.prepend(newLogo)
+  }
 })
