@@ -251,10 +251,6 @@ main {
 }
 
 .single {
-	.hero-banner {
-		margin-bottom: 0 !important;
-	}
-
 	.post-content > :first-child.wp-block-post-featured-image {
 		@media screen and (min-width: 769px) {
 			margin-top: -20rem
@@ -267,6 +263,13 @@ main {
 		@media screen and (max-width: 500px) {
 			margin-top: -8rem
 		}
+	}
+}
+
+.page-template-pagina-legal,
+.single {
+	.hero-banner {
+		margin-bottom: 0 !important;
 	}
 }
 
