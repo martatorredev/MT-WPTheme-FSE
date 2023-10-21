@@ -82,10 +82,22 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const logo = document.querySelector('.wp-block-site-logo a')
-  const navigation = document.querySelector('.wp-block-navigation')
+  const navigation = document.querySelector('header .wp-block-navigation')
 
   if (logo && navigation) {
     const newLogo = logo.cloneNode()
     navigation.prepend(newLogo)
+  } else {
+    console.error('Logo or navigation not found', { logo, navigation })
+  }
+
+  const socialLinkBlocks = Array.from(document.querySelectorAll('.wp-block-social-links'))
+
+  for (const block of socialLinkBlocks) {
+    const links = Array.from(block.querySelectorAll('.wp-block-social-link-anchor'))
+
+    for (const link of links) {
+      link.setAttribute('title', )
+    }
   }
 })
