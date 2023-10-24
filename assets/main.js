@@ -94,10 +94,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const socialLinkBlocks = Array.from(document.querySelectorAll('.wp-block-social-links'))
 
   for (const block of socialLinkBlocks) {
-    const links = Array.from(block.querySelectorAll('.wp-block-social-link-anchor'))
+    const links = Array.from(document.querySelectorAll('.wp-block-social-link-anchor'))
 
     for (const link of links) {
-      link.setAttribute('title', )
+      const title = link.textContent
+
+      if (!title) continue
+      link.setAttribute('title', title)
     }
   }
 })
