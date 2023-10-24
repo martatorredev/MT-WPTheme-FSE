@@ -1,0 +1,58 @@
+@import './scss/mixins.scss';
+
+/* Editor content */
+.post-type-post,
+.post-type-ponencias,
+.post-type-mis-proyectos-web {
+  .editor-styles-wrapper {
+    font-size: 1.125rem;
+    color: var(--wp--preset--color--mt-dark-blue);
+    background-color: var(--wp--preset--color--light-gray-100);
+
+    .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+      max-width: 800px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    p {
+      line-height: 1.4;
+    }
+  
+    a {
+      color: #0077CB;
+      text-decoration: underline;
+    }
+  
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 2.5rem;
+      margin-bottom: 0.35em;
+      line-height: 1.3;
+      font-weight: 700;
+  
+      + * {
+        margin-top: 0;
+      }
+    }
+  
+    h3 {
+      color: #0077CB;
+      font-size: 1.5rem;
+    }
+  
+    .wp-block-image {
+      width: 100%;
+      margin-top: 2rem;
+  
+      figcaption {
+        color: inherit;
+        margin: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  
+    a:not([class]) {
+      @include animated-link(#0077CB, white);
+    }
+  }
+}

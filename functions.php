@@ -41,3 +41,18 @@ if ( ! function_exists( 'mtdev_load_scripts' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'mtdev_load_scripts' );
 }
+
+if ( ! function_exists( 'mtdev_load_editor_scripts' ) ) {
+	/**
+	 * Enqueue CSS Stylesheets and Javascript files for the editor.
+	 *
+	 * @return void
+	 */
+	function mtdev_load_editor_scripts() {
+		$theme_version = wp_get_theme()->get( 'Version' );
+
+		wp_enqueue_style( 'editor', get_theme_file_uri( 'assets/dist/editor.css' ), array(), $theme_version, 'all' );
+	}
+
+	add_action( 'enqueue_block_editor_assets', 'mtdev_load_editor_scripts' );
+}

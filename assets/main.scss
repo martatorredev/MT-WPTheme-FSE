@@ -118,7 +118,7 @@ input[type="radio"] {
 
 
 /* Header */
-header.site-header {
+header {
 	padding: 0;
 
 	.wp-block-navigation {
@@ -496,7 +496,7 @@ main {
 		}
 	}
 
-	input[type='submit'] {
+	.button {
 		background-color: var(--wp--preset--color--mt-green);
 		color: var(--wp--preset--color--mt-dark-blue);
 		font-family: var(--wp--preset--font-family--space-grotesk);
@@ -769,6 +769,10 @@ ol.gap-4 {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+}
+
+.img-with-shadow img {
+	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
 }
 
 .site-footer .wp-block-social-link-anchor {
