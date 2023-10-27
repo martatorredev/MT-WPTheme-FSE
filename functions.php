@@ -56,3 +56,13 @@ if ( ! function_exists( 'mtdev_load_editor_scripts' ) ) {
 
 	add_action( 'enqueue_block_editor_assets', 'mtdev_load_editor_scripts' );
 }
+
+function mtdev_comments( $fields ) {
+	// Remove fields
+	unset( $fields['url'] );
+	unset( $fields['cookies'] );
+
+	return $fields;
+}
+	
+add_filter( 'comment_form_fields', 'mtdev_comments');
