@@ -15,6 +15,7 @@ html * {
 img {
 	vertical-align: middle;
 	max-width: 100%;
+	height: auto;
 }
 
 input[type="text"],
@@ -245,7 +246,8 @@ main {
     }
   }
 
-  a:not([class]) {
+  a:not([class]),
+	.wp-block-pages-list__item__link {
 		@include animated-link(#0077CB, white);
   }
 }
@@ -303,9 +305,9 @@ main {
   text-decoration: none;
 }
 
-.ez-toc-counter nav ul li ul li a::before {
-  content: counter(item, lower-alpha) ". ";
-}
+// .ez-toc-counter nav ul li ul li a::before {
+//   content: counter(item, lower-alpha) ". ";
+// }
 
 #ez-toc-container {
   border: 1px solid var(--wp--preset--color--mt-green);
@@ -434,8 +436,12 @@ main {
 	line-height: 1;
 	
 	.gfield_required {
-		display: none;
+    color: var(--wp--preset--color--mt-green);
+    text-transform: none;
+    font-style: normal !important;
+    font-size: 0.9rem;
 	}
+
 
 	.ginput_container.ginput_container_consent label {
 		font-size: 1rem;
@@ -573,7 +579,11 @@ main {
 		}
 
 		.gfield_required {
-			display: none;
+			color: var(--wp--preset--color--mt-pink);
+		}
+
+		.gform_required_legend {
+			font-size: 0.9rem;
 		}
 
 		.ginput_container.ginput_container_consent label {
@@ -714,15 +724,13 @@ ul.has-blue-bullets {
 	padding-left: 0;
 
 	li {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-
 		&::before {
-			content: '•';
+			content: "•";
 			font-size: 1.75em;
 			line-height: 0;
 			color: var(--wp--preset--color--mt-blue);
+			vertical-align: middle;
+			margin-right: 1rem;
 		}
 	}
 }
@@ -772,8 +780,83 @@ ol.gap-4 {
 }
 
 .img-with-shadow img {
-	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
+  filter: drop-shadow(0 0 7px black);
 }
+
+.hide-current-page .current-menu-item {
+	display: none;
+}
+
+// Comments
+.comment-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-top:1rem;
+
+	* {
+		margin: 0;
+	}
+	
+	.required {
+    color: var(--wp--preset--color--mt-pink);
+	}
+
+	.comment-form-policy {
+		label {
+			text-transform: unset;
+			font-weight: normal;
+			line-height: 1.4;
+		}
+
+		input[type=checkbox] {
+			width: 1em !important;
+			border: none;
+			background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.6 14.7334V1.93336C15.6 1.49153 15.2418 1.13336 14.8 1.13336L1.99998 1.13336C1.55815 1.13336 1.19998 1.49153 1.19998 1.93336V14.7334C1.19998 15.1752 1.55815 15.5334 1.99998 15.5334H14.8C15.2418 15.5334 15.6 15.1752 15.6 14.7334Z' stroke='%23011046' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+
+			&:hover {
+				background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.6 14.7334V1.93336C15.6 1.49153 15.2418 1.13336 14.8 1.13336L1.99998 1.13336C1.55815 1.13336 1.19998 1.49153 1.19998 1.93336V14.7334C1.19998 15.1752 1.55815 15.5334 1.99998 15.5334H14.8C15.2418 15.5334 15.6 15.1752 15.6 14.7334Z' stroke='%23011046' stroke-linecap='square'/%3E%3Cpath d='M4.1333 8.86676L6.79997 11.5334L12.6666 5.66675' stroke='%23011046' stroke-linecap='square'/%3E%3C/svg%3E%0A")
+			}
+
+			&:checked {
+				background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.6 14.7334V1.93336C15.6 1.49153 15.2418 1.13336 14.8 1.13336L1.99998 1.13336C1.55815 1.13336 1.19998 1.49153 1.19998 1.93336V14.7334C1.19998 15.1752 1.55815 15.5334 1.99998 15.5334H14.8C15.2418 15.5334 15.6 15.1752 15.6 14.7334Z' fill='%2328E8A3' stroke='%2328E8A3' stroke-linecap='square'/%3E%3Cpath d='M4.1333 8.86676L6.79997 11.5334L12.6666 5.66675' stroke='%23011046' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E%0A")
+			}
+		}
+	}
+	
+	.comment-form-policy-top-copy  {
+		margin-top: -1rem;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 0.5s;
+		
+		p {
+			margin-top: 1rem;
+			font-size: 0.8rem;
+			padding: 0;
+			width: 100%;
+			line-height: 1.4;
+		}
+	}
+
+	.comment-form-comment {
+		order: 5;
+	}
+	
+	.comment-form-policy {
+		order: 6;
+	}
+	
+	.comment-form-policy-top-copy {
+		order: 7;
+	}
+	
+	.form-submit.wp-block-button {
+		order: 10;
+	}
+}
+
+
 
 .site-footer .wp-block-social-link-anchor {
 	position: relative;
