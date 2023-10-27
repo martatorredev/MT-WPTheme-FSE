@@ -48,12 +48,12 @@ window.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const formDescriptions = document.querySelectorAll('.gfield_consent_description')
+  const formDescriptions = document.querySelectorAll('.gfield_consent_description, .comment-form-policy-top-copy')
 
   if (formDescriptions) {
     formDescriptions.forEach(description => {
       const form = description.closest('form')
-      const inputs = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"])')
+      const inputs = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), textarea')
       const checkbox = form.querySelector('input[type="checkbox"]')
       let checked = false
 
@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const socialLinkBlocks = Array.from(document.querySelectorAll('.wp-block-social-links'))
 
   for (const block of socialLinkBlocks) {
-    const links = Array.from(document.querySelectorAll('.wp-block-social-link-anchor'))
+    const links = Array.from(block.querySelectorAll('.wp-block-social-link-anchor'))
 
     for (const link of links) {
       const title = link.textContent
