@@ -24,6 +24,12 @@ html {
   It is hidden by default and only shown when the user clicks on the menu button.
  */
 
+@media screen and (min-width: 1201px) {
+  .visual-fix {
+    padding-left: 2rem !important;
+  }
+}
+
 @media screen and (min-width: 600px) and (max-width: 1200px) {
   .wp-block-navigation__responsive-container-open:not(.always-shown) {
     display: flex !important;
@@ -46,16 +52,23 @@ html {
   }
 }
 
+header .wp-block-group > .wp-block-navigation > .custom-logo-link {
+  display: none;
+}
 @media screen and (max-width: 1200px) {
-  header .wp-block-group > .wp-block-navigation > .custom-logo-link::before {
-    content: '';
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='156' height='150' fill='none'%3E%3Cpath fill='%23fff' d='M17.3 34.9c9.444 0 17.1-7.656 17.1-17.1C34.4 8.356 26.744.7 17.3.7 7.856.7.2 8.356.2 17.8c0 9.444 7.656 17.1 17.1 17.1ZM138.7 34.9c9.444 0 17.1-7.656 17.1-17.1 0-9.444-7.656-17.1-17.1-17.1-9.444 0-17.1 7.656-17.1 17.1 0 9.444 7.656 17.1 17.1 17.1ZM40.2 91.5l-5.9-5.9.1-35.2 23.4 23.5-17.6 17.6ZM116.4 91.5l5.7-5.8.1-35.3-23.5 23.5 17.7 17.6ZM78.142 94.256l-17.607 17.606 17.607 17.607 17.607-17.607-17.607-17.606ZM97.363 75.468 79.757 93.075l17.606 17.607 17.607-17.607-17.607-17.607ZM58.954 75.42 41.347 93.027l17.607 17.607 17.607-17.607L58.954 75.42ZM153.6 50.4h-29.8v98.9h29.8V50.4ZM32.6 50.4H2.8v98.9h29.8V50.4Z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
+  header .wp-block-group > .wp-block-navigation > .custom-logo-link {
     display: block;
-    width: 3rem;
-    height: 3rem;
-    margin-left: 2rem;
+
+    &::before {
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='156' height='150' fill='none'%3E%3Cpath fill='%23fff' d='M17.3 34.9c9.444 0 17.1-7.656 17.1-17.1C34.4 8.356 26.744.7 17.3.7 7.856.7.2 8.356.2 17.8c0 9.444 7.656 17.1 17.1 17.1ZM138.7 34.9c9.444 0 17.1-7.656 17.1-17.1 0-9.444-7.656-17.1-17.1-17.1-9.444 0-17.1 7.656-17.1 17.1 0 9.444 7.656 17.1 17.1 17.1ZM40.2 91.5l-5.9-5.9.1-35.2 23.4 23.5-17.6 17.6ZM116.4 91.5l5.7-5.8.1-35.3-23.5 23.5 17.7 17.6ZM78.142 94.256l-17.607 17.606 17.607 17.607 17.607-17.607-17.607-17.606ZM97.363 75.468 79.757 93.075l17.606 17.607 17.607-17.607-17.607-17.607ZM58.954 75.42 41.347 93.027l17.607 17.607 17.607-17.607L58.954 75.42ZM153.6 50.4h-29.8v98.9h29.8V50.4ZM32.6 50.4H2.8v98.9h29.8V50.4Z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      margin-left: 2rem;
+    }
   }
 
   header .hide-on-mobile {
@@ -178,6 +191,53 @@ button.wp-block-navigation__responsive-container-close {
   ---------------------
   The circular photo section is a custom block that is added to some pages like home or about-me.
  */
+
+@media screen and (min-width: 993px) {
+  .wp-block-columns.circular-photo-section {
+    max-width: 1015px;
+    gap: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 225px auto 225px;
+    margin-bottom: 5rem;
+
+    .wp-block-column {
+      &:nth-child(1),
+      &:nth-child(3) {
+        grid-row: 1 / 4;
+        display: grid;
+        grid-template-rows: subgrid;
+      }
+
+      &:nth-child(1) {
+        grid-column: 1 / 2;
+      }
+
+      &:nth-child(2) {
+        grid-column: 2 / 3;
+        height: 0;
+        overflow: visible;
+        align-self: flex-start;
+      }
+      
+      &:nth-child(3) {
+        grid-column: 3 / 4;
+      }
+
+      p {
+        font-size: 1.1875rem !important;
+        line-height: 1.3;
+        margin: 0 !important;
+      }
+    }
+
+    &.small-text {
+      gap: 8rem 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+}
+
 @media screen and (min-width: 601px) and (max-width: 992px){
   .circular-photo-section.wp-block-columns {
     display: grid;
@@ -228,12 +288,15 @@ button.wp-block-navigation__responsive-container-close {
       }
       
       &:nth-child(1) {
-        margin-top: 12rem;
         margin-right: 0;
         margin-bottom: 4rem;
         margin-left: auto;
 
         // margin-top: 10rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 12rem;
       }
     }
 
@@ -243,7 +306,7 @@ button.wp-block-navigation__responsive-container-close {
           gap: 16rem;
         }
         
-        &:nth-child(1) {
+        &:nth-child(3) {
           margin-top: 10rem;
         }
       }
@@ -390,6 +453,8 @@ button.wp-block-navigation__responsive-container-close {
         grid-column: 5 / span 6;
         grid-row: 5 / 6;
       }
+
+      padding: 0 1.6rem;
     }
   
     & > .arrow {

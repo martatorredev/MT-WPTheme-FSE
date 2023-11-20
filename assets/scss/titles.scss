@@ -1,0 +1,36 @@
+.h1 {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: var(--wp--custom--typography--font-size--colossal);
+  font-weight: var(--wp--custom--typography--font-weight--bolder);
+  line-height: var(--wp--custom--typography--line-height--page-title);
+}
+
+.h2 {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: 2.5rem;
+  font-weight: var(--wp--custom--typography--font-weight--bolder);
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
+
+.h3 {
+  font-family: var(--wp--preset--font-family--space-grotesk);
+  font-size: 2.0rem;
+  font-weight: var(--wp--custom--typography--font-weight--normal);
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
+
+.h4 {
+  font-size: 1.5rem;
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
+
+
+.h5 {
+  font-size: 1rem;
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
+
+.h6 {
+  font-size: 1rem;
+  line-height: var(--wp--custom--typography--line-height--heading);
+}
