@@ -28,59 +28,68 @@ const createArrows = qty => {
   return arrows
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+const handleSteps = () => {
   const steps = document.querySelectorAll('.steps')
 
-  if (steps) {
-    steps.forEach(step => {
-      const stepQty = step.children.length
-      const arrowsQty = stepQty - 1
+  steps.forEach(step => {
+    const stepQty = step.children.length
+    const arrowsQty = stepQty - 1
 
-      const arrows = createArrows(arrowsQty)
+    const arrows = createArrows(arrowsQty)
 
-      Array.from(step.children).forEach((child, index) => {
-        const arrow = arrows[index]
+    Array.from(step.children).forEach((child, index) => {
+      const arrow = arrows[index]
 
-        if (!arrow) return
+      if (!arrow) return
 
-        child.insertAdjacentElement('afterend', arrow)
-      })
+      child.insertAdjacentElement('afterend', arrow)
     })
-  }
+  })
+}
 
+const createDescriptionAnchor = () => {
+  const anchor = document.createElement('a')
+  anchor.classList.add('display-description-btn')
+  anchor.setAttribute('href', '#')
+  anchor.addEventListener('click', event => event.preventDefault())
+
+  anchor.textContent = 'Más información sobre la protección de datos.'
+
+  return anchor
+}
+
+const handleFormConsent = () => {
   const formDescriptions = document.querySelectorAll('.gfield_consent_description, .comment-form-policy-top-copy')
 
-  if (formDescriptions) {
-    formDescriptions.forEach(description => {
-      const form = description.closest('form')
-      const inputs = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), textarea')
-      const checkbox = form.querySelector('input[type="checkbox"]')
-      let checked = false
+  formDescriptions.forEach(description => {
+    const form = description.closest('form')
 
-      inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-          if (checked) return
+    const checkbox = form.querySelector('.gfield--type-consent input[type="checkbox"]')
+    const displayDescriptionAnchor = createDescriptionAnchor()
 
-          description.style.maxHeight = `${description.scrollHeight}px`
-          description.classList.add('is-open')
-        })
+    if (!checkbox) return
 
-        input.addEventListener('blur', () => {
-          description.style.maxHeight = '0px'
-          description.classList.remove('is-open')
-        })
-      })
+    // Show/hide description
+    displayDescriptionAnchor.addEventListener('click', () => {
+      const isOpen = description.classList.contains('is-open')
 
-      checkbox.addEventListener('change', (event) => {
-        checked = event.target.checked
+      if (!isOpen) {
+        description.style.maxHeight = `${description.scrollHeight}px`
+        description.classList.add('is-open')
 
-        const maxHeight = checked ? '0px' : `${description.scrollHeight}px`
-        description.classList[checked ? 'remove' : 'add']('is-open')
-        description.style.maxHeight = maxHeight
-      })
+        return
+      }
+
+      description.style.maxHeight = '0px'
+      description.classList.remove('is-open')
     })
-  }
 
+    // Insert anchor after checkbox
+    checkbox.parentElement?.insertAdjacentElement('afterend', displayDescriptionAnchor)
+  })
+}
+
+const handleNavigation = () => {
   const logo = document.querySelector('.wp-block-site-logo a')
   const navigation = document.querySelector('header .wp-block-navigation')
 
@@ -90,7 +99,9 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('Logo or navigation not found', { logo, navigation })
   }
+}
 
+const fixSocialLinkBlocks = () => {
   const socialLinkBlocks = Array.from(document.querySelectorAll('.wp-block-social-links'))
 
   for (const block of socialLinkBlocks) {
@@ -103,4 +114,11 @@ window.addEventListener('DOMContentLoaded', () => {
       link.setAttribute('title', title)
     }
   }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  handleSteps()
+  handleFormConsent()
+  handleNavigation()
+  fixSocialLinkBlocks()
 })
