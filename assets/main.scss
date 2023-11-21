@@ -600,8 +600,13 @@ main {
 			font-size: 0.9rem;
 		}
 
-		.ginput_container.ginput_container_consent label {
+		.ginput_container.ginput_container_consent label,
+		.display-description-btn {
 			font-size: 0.75rem;
+		}
+
+		.display-description-btn {
+			@include animated-link(#0077CB, white);
 		}
 
 		input[type="checkbox"] {
@@ -921,6 +926,12 @@ ol.gap-4 {
 		--background: #011046;
 		background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0023 13.6226L23.7043 6H22.1167L16.2949 12.6173L11.6485 6H6.28809L13.3159 16.0075L6.28809 24H7.87569L14.0197 17.0104L18.9277 24H24.2881M8.44869 7.17142H10.8877L22.1155 22.8861H19.6759' fill='%23FBFBFC'/%3E%3C/svg%3E%0A");
 	}
+}
+
+.display-description-btn {
+	display: inline-block;
+	margin: 1rem 0 0;
+	font-size: 0.8em;
 }
 
 /* Titles */
