@@ -90,14 +90,16 @@ const handleFormConsent = () => {
 }
 
 const handleNavigation = () => {
-  const logo = document.querySelector('.wp-block-site-logo a')
   const navigation = document.querySelector('header .wp-block-navigation')
+  const logo = navigation.querySelector('.wp-block-site-logo')
+  const anchor = logo.querySelector('a')
 
-  if (logo && navigation) {
-    const newLogo = logo.cloneNode()
+  if (navigation && anchor && logo) {
+    const newLogo = anchor.cloneNode()
     navigation.prepend(newLogo)
+    logo.parentElement?.classList?.add('site-logo-container')
   } else {
-    console.error('Logo or navigation not found', { logo, navigation })
+    console.error('Elements not found', { logo, anchor, navigation })
   }
 }
 
