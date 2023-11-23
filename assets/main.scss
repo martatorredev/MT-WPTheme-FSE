@@ -570,6 +570,10 @@ main {
 			text-transform: unset !important;
 		}
 	}
+
+	label.gfield_label.gform-field-label {
+		font-weight: bold !important;
+	}
 }
 
 .button-left .gform_wrapper.gravity-theme input[type='submit'] {
