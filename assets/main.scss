@@ -571,7 +571,8 @@ main {
 		}
 	}
 
-	label.gfield_label.gform-field-label {
+	label.gfield_label.gform-field-label, 
+	legend.gfield_label.gform-field-label{
 		font-weight: bold !important;
 	}
 }
