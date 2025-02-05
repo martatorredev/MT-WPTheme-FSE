@@ -66,3 +66,15 @@ function mtdev_comments( $fields ) {
 }
 	
 add_filter( 'comment_form_fields', 'mtdev_comments');
+
+function mtdev_add_template_class($classes) {
+	$template = get_page_template_slug();
+
+	if ($template) {
+		$class = preg_replace('/\.php$/', '', $template);
+		$classes .= ' page-template-' . sanitize_html_class($class);
+	}
+	return $classes;
+}
+
+add_filter('admin_body_class', 'mtdev_add_template_class');
