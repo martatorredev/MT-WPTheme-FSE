@@ -240,6 +240,10 @@ main {
     font-size: 1.5rem;
   }
 
+	h5 {
+		color: #0077cb;
+	}
+
   .wp-block-image {
     width: 100%;
     margin-top: 2rem;
@@ -301,7 +305,7 @@ main {
 	transition: color 0.2s, background-color 0.2s;
 
   &:hover{
-		background-color: var(--wp--preset--color--mt-blue) !important;
+		background-color: var(--wp--preset--color--mt-purple) !important;
 		color: white !important;
 	}
 }
@@ -460,11 +464,31 @@ main {
 	.gfield_error .gfield_repeater_cell label, 
 	.gfield_error label, 
 	.gfield_error legend, 
-	.gfield_validation_message, 
-	.validation_message, 
+	// .gfield_validation_message, 
+	// .validation_message, 
 	[aria-invalid=true] + label, 
 	label + [aria-invalid=true] {
 		color: var(--wp--preset--color--mt-pink);
+	}
+
+
+	.gfield_error label,
+	.gfield_error legend,
+	.gfield_required {
+		color: var(--wp--preset--color--mt-pink) !important;
+	}
+
+
+	.gfield_error [aria-invalid=true] {
+		border-color: var(--wp--preset--color--mt-pink) !important;
+	}
+	
+	.validation_message,
+	.gfield_validation_message,
+	.gform_validation_errors,
+	.gform_validation_errors > h2{
+		color: #a42509 !important;
+		border-color: #a42509 !important;
 	}
 
 	.ginput_container.ginput_container_consent label {
@@ -598,6 +622,10 @@ main {
 }
 
 .sidebar {
+	.has-mt-dark-blue-color a {
+		color: inherit;
+	}
+
 	a:not([class]) {
     color: #0077CB;
     text-decoration: underline;
@@ -680,6 +708,18 @@ main {
 		align-items: center;
 		justify-content: center;
 		text-decoration: none;
+
+		&.current {
+			background-color: var(--wp--preset--color--mt-green);
+			color: #011046;
+			border-color: var(--wp--preset--color--mt-green) !important;
+		}
+		
+		&.dots {
+			border: none;
+			width: auto;
+			height: 2em;
+		}
 	}
 }
 
