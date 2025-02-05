@@ -7,6 +7,7 @@ module.exports = {
 	context: path.resolve( __dirname, 'assets' ),
 	entry: [
 		'./main.scss',
+		'./editor.scss',
 		'./main.js',
 	],
 	output: {
